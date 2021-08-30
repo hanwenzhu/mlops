@@ -8,10 +8,7 @@
       "linux": 3,
       "win": 3
     },
-    "soft_file": {
-      "linux": "dev-*.json",
-      "win": "dev-*.json"
-    }
+    "soft_file_universal": "dev-*.json"
   },
   "deps": {},
   "soft_name": "SQuAD dataset (dev set)",
