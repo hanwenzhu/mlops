@@ -21,6 +21,7 @@
     "2019",
     "raw",
     "original",
-    "train"
+    "train",
+    "nifti"
   ]
 }
