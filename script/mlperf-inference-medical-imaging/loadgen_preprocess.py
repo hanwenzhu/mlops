@@ -1,5 +1,5 @@
 #
-# MLPerf inference; language; preprocessing
+# MLPerf inference; medical imaging; preprocessing
 #
 # Copyright (c) 2019 cTuning foundation.
 # Copyright (c) 2021 OctoML, Inc.
