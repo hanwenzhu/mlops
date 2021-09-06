@@ -11,7 +11,7 @@ fi
 
 cd $CK_ENV_MLPERF_INFERENCE_MEDICAL_IMAGING
 
-# Adding path to tokenization
+# Adding path to nnUnet library
 export PYTHONPATH="$CK_ENV_MLPERF_INFERENCE_MEDICAL_IMAGING/nnUnet:${PYTHONPATH}"
 
 export BUILD_DIR=build
@@ -22,7 +22,8 @@ export PREPROCESSED_DATA_DIR=$BUILD_DIR/preprocessed_data
 export POSTPROCESSED_DATA_DIR=$BUILD_DIR/postprocessed_data
 export RESULT_DIR=$BUILD_DIR/result
 export LOG_DIR=$BUILD_DIR/logs
-export PLANS_PKL_PATH=$ML_MODEL_ROOT/nnUNet/3d_fullres/Task043_BraTS2019/nnUNetTrainerV2__nnUNetPlansv2.mlperf.1
+# PLANS_PKL_PATH set in loadgen_preprocess
+# export PLANS_PKL_PATH=$ML_MODEL_ROOT/nnUNet/3d_fullres/Task043_BraTS2019/nnUNetTrainerV2__nnUNetPlansv2.mlperf.1
 
 # Env variables needed by nnUnet
 export nnUNet_raw_data_base=$RAW_DATA_DIR

@@ -17,18 +17,18 @@
 
 ## Dataset
 
-* [Installation](https://github.com/ctuning/ck/blob/master/docs/mlperf-automation/datasets/brats2019.md)
+TODO: fill out this guide (BraTS is not openly available so it can only be detected as soft)
+
+* [Installation](https://github.com/ctuning/ck/blob/master/docs/mlperf-automation/datasets/brats.md)
 
 ## Models
 
 ```bash
-ck install package --tags=ml-model,medical-imaging,3d-unet,onnx
+ck install package --tags=ml-model,medical-imaging,3d-unet
+```
 ```
 
 ## Python prerequisites
-
-Several packages are required by the nnUnet library, which is
-used in the reference implementation.
 
 ```bash
 ck run program:mlperf-inference-bench-medical-imaging-onnx-cpu \
@@ -36,9 +36,6 @@ ck run program:mlperf-inference-bench-medical-imaging-onnx-cpu \
 ```
 
 # Test accuracy
-
-For both accuracy and performance mode, preprocessing is done by
-the PyTorch model prior to running and may take up to 1-2 minutes.
 
 ## Offline
 
@@ -65,7 +62,6 @@ ck run program:mlperf-inference-bench-medical-imaging-onnx-cpu \
 
 # Test performance 
 
-Note: running may take up to 10-30s per sample on a CPU.
 
 ## Offline
 
@@ -73,13 +69,6 @@ Run with default parameters
 ```bash
 ck run program:mlperf-inference-bench-medical-imaging-onnx-cpu \
         --cmd_key=performance-offline
-```
-
-Customize QSL size for performance mode with `CK_LOADGEN_PERFORMANCE_COUNT`:
-```bash
-ck run program:mlperf-inference-bench-medical-imaging-onnx-cpu \
-        --cmd_key=performance-offline \
-        --env.CK_LOADGEN_PERFORMANCE_COUNT=8
 ```
 
 ## Server

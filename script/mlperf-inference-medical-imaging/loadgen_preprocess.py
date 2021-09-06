@@ -41,6 +41,17 @@ def ck_preprocess(i):
     if performance_count:
         opts+=' --performance_count='+performance_count
 
+    # Check plans.pkl path
+    # Note: the reference model in pytorch contains the plans.pkl as well as
+    # model needed for preprocessing, so the pytorch model is a dependency of
+    # other models
+    pytorch_dict = ml_model_dict.get('deps', {}).get('ml-model-mlperf-3d-unet-pytorch', {})
+    pytorch_env = pytorch_dict.get('dict', {}).get('env', {})
+    if not pytorch_env:
+        pytorch_env = ml_model_env_dict
+    plans_pkl_dir = pytorch_env['ML_MODEL_ROOT']
+    new_env['PLANS_PKL_PATH'] = plans_pkl_dir
+
     # Check output directory
     new_env['CK_MLPERF_OUTPUT_DIR']=os.getcwd()
 
